@@ -13,7 +13,12 @@
 
     <bean id="myPerson"
           class="spring_introduction.model.Person">
-        <constructor-arg ref="myPet"/>
+        <property name="pet" ref="myPet"/>
+
+        <property name="firstName" value="Max"/>
+        <property name="lastName" value="Khodakov"/>
+        <property name="age" value="17"/>
+        <property name="companies" value="EPAM"/>
     </bean>
 
 </beans>
