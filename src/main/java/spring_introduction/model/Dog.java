@@ -23,4 +23,12 @@ public class Dog implements Pet {
     public void say() {
         log.info("Wof wof");
     }
+
+    public void init() {
+        log.info("Class Dog: init method");
+    }
+
+    public void destroy() {
+        log.info("Class Dog: destroy method");
+    }
 }
