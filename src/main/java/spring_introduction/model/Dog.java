@@ -1,7 +1,10 @@
 package spring_introduction.model;
 
+import org.springframework.stereotype.Component;
+
 import java.util.logging.Logger;
 
+@Component("dogBean")
 public class Dog implements Pet {
     private static final Logger log = Logger.getLogger(Dog.class.getName());
 
