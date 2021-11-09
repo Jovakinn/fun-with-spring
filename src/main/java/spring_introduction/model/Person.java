@@ -1,9 +1,11 @@
 package spring_introduction.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import spring_introduction.model.Companies.Companies;
-
 import java.util.logging.Logger;
 
+@Component("personBean")
 public class Person {
     private static final Logger log = Logger.getLogger(Person.class.getName());
 
@@ -13,6 +15,7 @@ public class Person {
     private Companies companies;
     private Pet pet;
 
+    @Autowired
     public Person(Pet pet) {
         log.info("Person bean is created");
         this.pet = pet;
