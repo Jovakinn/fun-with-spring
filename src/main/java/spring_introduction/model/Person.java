@@ -1,6 +1,8 @@
 package spring_introduction.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import spring_introduction.model.Companies.Companies;
 import java.util.logging.Logger;
@@ -9,14 +11,17 @@ import java.util.logging.Logger;
 public class Person {
     private static final Logger log = Logger.getLogger(Person.class.getName());
 
+    @Value("${person.firstName}")
     private String firstName;
+    @Value("${person.lastName}")
     private String lastName;
+    @Value("${person.age}")
     private Integer age;
     private Companies companies;
     private Pet pet;
 
     @Autowired
-    public Person(Pet pet) {
+    public Person(@Qualifier("catBean") Pet pet) {
         log.info("Person bean is created");
         this.pet = pet;
     }
