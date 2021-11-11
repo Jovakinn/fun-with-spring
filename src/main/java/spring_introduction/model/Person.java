@@ -21,7 +21,7 @@ public class Person {
     private Pet pet;
 
     @Autowired
-    public Person(@Qualifier("catBean") Pet pet) {
+    public Person(@Qualifier("dogBean") Pet pet) {
         log.info("Person bean is created");
         this.pet = pet;
     }
