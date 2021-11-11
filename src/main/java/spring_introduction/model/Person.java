@@ -16,7 +16,7 @@ public class Person {
     @Value("${person.lastName}")
     private String lastName;
     @Value("${person.age}")
-    private Integer age;
+    private String age;
     private Companies companies;
     private Pet pet;
 
@@ -61,11 +61,11 @@ public class Person {
         this.lastName = lastName;
     }
 
-    public Integer getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
