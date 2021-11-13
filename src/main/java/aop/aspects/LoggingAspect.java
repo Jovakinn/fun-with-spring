@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 public class LoggingAspect {
     private static final Logger log = Logger.getLogger(LoggingAspect.class.getName());
 
-    @Before("execution(* aop.model.Library.getBooksOfUsers())")
+    @Before("execution(public void aop.model.Libraries.StreetLibrary.getBooks(..))")
     public void beforeGetBooksOfUsersAdvice() {
         log.info("getting access to library");
     }

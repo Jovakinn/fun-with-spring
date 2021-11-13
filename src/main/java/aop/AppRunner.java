@@ -1,7 +1,7 @@
 package aop;
 
 import aop.config.ConfigForAOP;
-import aop.model.Library;
+import aop.model.Libraries.StreetLibrary;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class AppRunner {
@@ -9,8 +9,8 @@ public class AppRunner {
         try (AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext(ConfigForAOP.class)) {
 
-            Library library = context.getBean("library", Library.class);
-            Library.getBooksOfUsers(library);
+            StreetLibrary library = context.getBean("library", StreetLibrary.class);
+            library.getBooks(library);
         }
     }
 }
