@@ -11,8 +11,8 @@ import java.util.logging.Logger;
 public class LoggingAspect {
     private static final Logger log = Logger.getLogger(LoggingAspect.class.getName());
 
-    @Before("execution(public void getBook())")
-    public void beforeGetBookAdvice() {
-        log.info("Attempt to get a book");
+    @Before("execution(public static void getBooksOfUsers())")
+    public void beforeGetBooksOfUsersAdvice() {
+        log.info("getting access to library");
     }
 }

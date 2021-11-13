@@ -8,8 +8,9 @@ public class AppRunner {
     public static void main(String[] args) {
         try (AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext(ConfigForAOP.class)) {
+            
             Library library = context.getBean("library", Library.class);
-            library.getBook();
+            Library.getBooksOfUsers(library);
         }
     }
 }
