@@ -1,14 +1,17 @@
 package aop.model;
 
 import aop.model.Genres.Genre;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.util.Objects;
 
 @Component
 public class Book {
+    @Value("#{book.title}")
     private String title;
     private Genre genre;
+    @Value("#{book.amountOfPages}")
     private Integer amountOfPages;
 
     @Override

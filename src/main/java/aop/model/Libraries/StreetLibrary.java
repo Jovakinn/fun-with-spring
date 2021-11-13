@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 @Component("library")
-public class StreetLibrary extends AbstractLibrary<StreetLibrary> {
+public class StreetLibrary implements AbstractLibrary<StreetLibrary> {
     private List<Reader> readers;
     private static final Logger log = Logger.getLogger(StreetLibrary.class.getName());
 

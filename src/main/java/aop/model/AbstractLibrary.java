@@ -1,5 +1,5 @@
 package aop.model;
 
-public abstract class AbstractLibrary<T> {
-    public abstract void getBooks(T library);
+public interface  AbstractLibrary<T> {
+    public  void getBooks(T library);
 }

@@ -1,14 +1,18 @@
 package aop.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.util.Objects;
 
 @Component
 public class Reader {
+    @Value("${reader.firstname}")
     private String firstName;
+    @Value("${reader.lastname}")
     private String lastName;
+    @Value("#{reader.age}")
     private Integer age;
     private Book book;
 
