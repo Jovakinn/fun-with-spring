@@ -3,11 +3,13 @@ package aop.model.Libraries;
 import aop.model.AbstractLibrary;
 import aop.model.Reader;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.logging.Logger;
 
 @Component
+@Scope("prototype")
 public class StreetLibrary implements AbstractLibrary<StreetLibrary> {
     private static final Logger log = Logger.getLogger(StreetLibrary.class.getName());
 
