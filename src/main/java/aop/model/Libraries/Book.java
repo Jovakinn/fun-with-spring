@@ -1,4 +1,4 @@
-package aop.model;
+package aop.model.Libraries;
 
 import aop.model.Genres.Genre;
 import org.springframework.beans.factory.annotation.Value;

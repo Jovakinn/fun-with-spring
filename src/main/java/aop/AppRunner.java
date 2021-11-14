@@ -1,10 +1,10 @@
 package aop;
 
 import aop.config.ConfigForAOP;
-import aop.model.Book;
+import aop.model.Libraries.Book;
 import aop.model.Libraries.SchoolLibrary;
 import aop.model.Libraries.StreetLibrary;
-import aop.model.Reader;
+import aop.model.Libraries.Reader;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.ArrayList;

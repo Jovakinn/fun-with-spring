@@ -1,7 +1,5 @@
 package aop.model.Libraries;
 
-import aop.model.AbstractLibrary;
-import aop.model.Reader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
