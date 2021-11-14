@@ -27,4 +27,8 @@ public class SchoolLibrary implements AbstractLibrary<SchoolLibrary> {
                     .forEach(System.out::println);
         }
     }
+
+    public void returnAmountOfReaders(){
+        readers.size();
+    }
 }

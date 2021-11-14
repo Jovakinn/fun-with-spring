@@ -12,12 +12,23 @@ import java.util.logging.Logger;
 public class LoggingAndSecurityAspect {
     private static final Logger log = Logger.getLogger(LoggingAndSecurityAspect.class.getName());
 
+    @Pointcut("execution(public void aop.model.Libraries.StreetLibrary.get*())")
+    private void allGetMethodsFromLibraries() {}
+
     @Pointcut("execution(public void get*())")
     private void allGetMethods() {}
 
-    @Before("allGetMethods()")
-    public void beforeGettingAdvice() {
-        log.info("getting access to library");
+    @Pointcut("allGetMethodsFromLibraries() || allGetMethods()")
+    private void allGetMethodsFromLibrariesAndAllGetMethods() {}
+
+    @Before("allGetMethodsFromLibrariesAndAllGetMethods()")
+    public void beforeMethod() {
+        log.info("Call pointcuts");
+    }
+
+    @Before("allGetMethodsFromLibraries()")
+    public void beforeGetLoggingAdvice() {
+        log.info("All get methods from Libraries");
     }
 
     @Before("allGetMethods()")
