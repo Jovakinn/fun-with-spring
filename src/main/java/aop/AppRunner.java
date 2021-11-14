@@ -12,11 +12,9 @@ public class AppRunner {
 
             StreetLibrary streetLibrary = context.getBean("streetLibrary", StreetLibrary.class);
             streetLibrary.getBooks(streetLibrary);
-            streetLibrary.getReaders();
 
             SchoolLibrary schoolLibrary = context.getBean("schoolLibrary", SchoolLibrary.class);
             schoolLibrary.getBooks(schoolLibrary);
-            schoolLibrary.getReaders();
         }
     }
 }
