@@ -11,6 +11,8 @@ public class Runner {
         EmployeeService employeeService = new EmployeeService();
         Employee employee = new Employee("Max", "Khodakov", "IT", 1200);
         employeeService.saveEmployee(employee);
+        employee.setSalary(77777);
+        employeeService.updateEmployee(employee);
         log.info(String.valueOf(employeeService.findAllEmployees()));
     }
 }
