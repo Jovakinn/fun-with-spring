@@ -1,8 +1,6 @@
 package hibernate.utils;
 
-import hibernate.model.Department;
-import hibernate.model.Detail;
-import hibernate.model.Employee;
+import hibernate.model.*;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -19,6 +17,8 @@ public class HibernateSessionFactoryUtil {
                 configuration.addAnnotatedClass(Employee.class);
                 configuration.addAnnotatedClass(Detail.class);
                 configuration.addAnnotatedClass(Department.class);
+                configuration.addAnnotatedClass(Child.class);
+                configuration.addAnnotatedClass(Section.class);
                 StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
                 sessionFactory = configuration.buildSessionFactory(builder.build());
             } catch (Exception e) {
