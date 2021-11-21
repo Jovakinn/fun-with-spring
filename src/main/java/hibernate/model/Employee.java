@@ -16,8 +16,6 @@ public class Employee {
     @Column(name = "surname", nullable = false)
     private String lastName;
 
-    @Column(name = "department")
-    private String department;
 
     @Column(name = "salary")
     private Integer salary;
@@ -26,13 +24,16 @@ public class Employee {
     @JoinColumn(name = "details_id")
     private Detail employeeDetail;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "department_id")
+    private Department department;
+
     public Employee() {
     }
 
-    public Employee(String firstName, String lastName, String department, Integer salary) {
+    public Employee(String firstName, String lastName, Integer salary) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.department = department;
         this.salary = salary;
         employeeDetail = new Detail();
     }
@@ -46,14 +47,6 @@ public class Employee {
                 ", department='" + department + '\'' +
                 ", salary=" + salary +
                 '}';
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getFirstName() {
@@ -72,14 +65,6 @@ public class Employee {
         this.lastName = lastName;
     }
 
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
-    }
-
     public Integer getSalary() {
         return salary;
     }
@@ -94,5 +79,13 @@ public class Employee {
 
     public void setEmployeeDetail(Detail employeeDetail) {
         this.employeeDetail = employeeDetail;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 }
