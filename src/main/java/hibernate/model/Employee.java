@@ -29,13 +29,12 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(Integer id, String firstName, String lastName, String department, Integer salary, Detail employeeDetail) {
-        this.id = id;
+    public Employee(String firstName, String lastName, String department, Integer salary) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.department = department;
         this.salary = salary;
-        this.employeeDetail = employeeDetail;
+        employeeDetail = new Detail();
     }
 
     @Override
@@ -46,7 +45,6 @@ public class Employee {
                 ", lastName='" + lastName + '\'' +
                 ", department='" + department + '\'' +
                 ", salary=" + salary +
-                ", employeeDetail=" + employeeDetail +
                 '}';
     }
 
